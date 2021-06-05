@@ -24,6 +24,7 @@ The following have been incorporated in this project :
  using web-APIs. 
 * At the local storage, the id of each time block is saved as key, and the event the user entered is stored as value.
 * When the page  is refreshed the the saved events persist.The events are displayed using localstorage.getItem()API.
+* When the user reloads the planner the next day, the local storage is cleared(previous day events) and he is all set to enter the events for that day.
 
 
 
