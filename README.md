@@ -26,9 +26,11 @@ The following have been incorporated in this project :
 * When the page  is refreshed the the saved events persist.The events are displayed using localstorage.getItem()API.
 
 
-![Wireframe](https://github.com/Deeparkrish/MyPortfolio/blob/main/assets/img/wireframe.jpeg)
+
 
 ![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/planner.jpeg)
+
+![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/local%20storage.png)
 
 
 ## Built With
