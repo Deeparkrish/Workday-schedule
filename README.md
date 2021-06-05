@@ -28,7 +28,7 @@ The following have been incorporated in this project :
 
 ![Wireframe](https://github.com/Deeparkrish/MyPortfolio/blob/main/assets/img/wireframe.jpeg)
 
-![Webpage](https://github.com/Deeparkrish/MyPortfolio/blob/main/assets/img/screencapture-file-Users-deepakrishnan-Mycode-ChallengeRepo-MyPortfolio-index-html-2021-05-16-23_26_28.png)
+![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/planner.jpeg)
 
 
 ## Built With
