@@ -1,7 +1,6 @@
-// var currentDayEl = document.querySelector("#currentDay");
+
 // var today = moment().format('dddd, MMMM Do YYYY');// get today's date
 var today = moment().format('LLLL');
-
 
 // add the current day and date to the header
 //currentDayEl.innerHTML =today;
@@ -12,6 +11,8 @@ var Timetracker = function(){
     //current time 
     var timeNow = moment().hour();
     timeNow =parseInt(timeNow);
+
+   
     //color-code the timeblocks 
     $(".time-block").each(function(){    
     // time of event 
@@ -29,7 +30,6 @@ var Timetracker = function(){
             $(this).removeClass("present");
             $(this).addClass("future");
             //change backround to green
-
         }
         //check if the eventtime is less than current time 
         // Its past the event time 
@@ -47,12 +47,10 @@ var Timetracker = function(){
             $(this).removeClass("past");
             $(this).removeClass("future");
             //change backround to red
-            $(this).addClass("present");
-            
-        } 
+            $(this).addClass("present");           
+        }       
     });
 }
-
 //Save button eventlistener 
 $(".saveBtn").on("click", function () {
     // Get values of the description in JQuery
@@ -76,7 +74,14 @@ $("#hour-3 .description").val(localStorage.getItem("hour-3"));
 $("#hour-4 .description").val(localStorage.getItem("hour-4"));
 $("#hour-5 .description").val(localStorage.getItem("hour-5"));
 };
+
+var clearData =function(){
+    localStorage.clear();    
+}
+// Clear storage for the next day 
+
 //load current schedule 
 loadCalendar();
 // Track the status of each event item in the planner 
 Timetracker();
+
