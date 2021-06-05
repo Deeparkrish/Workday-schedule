@@ -24,11 +24,14 @@ The following have been incorporated in this project :
  using web-APIs. 
 * At the local storage, the id of each time block is saved as key, and the event the user entered is stored as value.
 * When the page  is refreshed the the saved events persist.The events are displayed using localstorage.getItem()API.
+* When the user reloads the planner the next day, the local storage is cleared(previous day events) and he is all set to enter the events for that day.
 
 
-![Wireframe](https://github.com/Deeparkrish/MyPortfolio/blob/main/assets/img/wireframe.jpeg)
 
-![Webpage](https://github.com/Deeparkrish/MyPortfolio/blob/main/assets/img/screencapture-file-Users-deepakrishnan-Mycode-ChallengeRepo-MyPortfolio-index-html-2021-05-16-23_26_28.png)
+
+![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/planner.jpeg)
+
+![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/local%20storage.png)
 
 
 ## Built With
