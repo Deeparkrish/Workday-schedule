@@ -26,7 +26,8 @@ The following have been incorporated in this project :
 * When the page  is refreshed the the saved events persist.The events are displayed using localstorage.getItem()API.
 * When the user reloads the planner the next day, the local storage is cleared(previous day events) and he is all set to enter the events for that day.
 
-
+![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/pseudo2.jpeg)
+![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/psuedo1.jpeg)
 
 
 ![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/planner.jpeg)
