@@ -2,10 +2,11 @@
 // var today = moment().format('dddd, MMMM Do YYYY');// get today's date
 var today = moment().format('LLLL');
 
+var thisDate = moment().format('MM/DD/YY');
+console.log(thisDate);
+localStorage.setItem("time",thisDate);
 // add the current day and date to the header
-//currentDayEl.innerHTML =today;
 $("#currentDay").text(today);
-
 // Track the status of event items in the schedule
 var Timetracker = function(){
     //current time 
@@ -50,6 +51,7 @@ var Timetracker = function(){
             $(this).addClass("present");           
         }       
     });
+    return;
 }
 //Save button eventlistener 
 $(".saveBtn").on("click", function () {
@@ -63,6 +65,14 @@ $(".saveBtn").on("click", function () {
 
 // load the saved  schedule 
 var loadCalendar = function(){
+var timeStamp =localStorage.getItem("time");
+
+// Check if  its not the current day 
+if((moment().format('MM/DD/YY') )!= timeStamp){
+    console.log ("If passes ");
+    //Clear data to keep planner ready for next day 
+    clearData();
+}
 $("#hour-8 .description").val(localStorage.getItem("hour-8"));
 $("#hour-9 .description").val(localStorage.getItem("hour-9"));
 $("#hour-10 .description").val(localStorage.getItem("hour-10"));
@@ -73,15 +83,21 @@ $("#hour-2 .description").val(localStorage.getItem("hour-2"));
 $("#hour-3 .description").val(localStorage.getItem("hour-3"));
 $("#hour-4 .description").val(localStorage.getItem("hour-4"));
 $("#hour-5 .description").val(localStorage.getItem("hour-5"));
+return;
 };
 
-var clearData =function(){
-    localStorage.clear();    
-}
 // Clear storage for the next day 
+var clearData =function(){
+      // in 13 hours
+    console.log("ready to cleanup");
+    // clean up local storage 
+    localStorage.clear();    
+    return;
+}
 
 //load current schedule 
 loadCalendar();
 // Track the status of each event item in the planner 
 Timetracker();
+  
 
