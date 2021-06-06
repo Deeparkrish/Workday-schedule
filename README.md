@@ -28,6 +28,7 @@ The following have been incorporated in this project :
 
 ![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/pseudo2.jpeg)
 ![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/psuedo1.jpeg)
+![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/psuedo3.jpeg)
 
 
 ![Webpage](https://github.com/Deeparkrish/Workday-schedule/blob/main/assets/img/planner.jpeg)
