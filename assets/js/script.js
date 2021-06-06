@@ -1,31 +1,33 @@
-
-// var today = moment().format('dddd, MMMM Do YYYY');// get today's date
+//setting today's date in the header 
+// get today's date
 var today = moment().format('LLLL');
-
-var thisDate = moment().format('MM/DD/YY');
-console.log(thisDate);
-localStorage.setItem("time",thisDate);
 // add the current day and date to the header
 $("#currentDay").text(today);
+
+// get time in date format
+//This is to store the date in local storage of testing purpose  
+var thisDate = moment().format('MM/DD/YY');
+
+
 // Track the status of event items in the schedule
 var Timetracker = function(){
-    //current time 
-    var timeNow = moment().hour();
-    timeNow =parseInt(timeNow);
+// getthe hour of current time 
+var timeNow = moment().hour();
+timeNow =parseInt(timeNow);
 
    
-    //color-code the timeblocks 
-    $(".time-block").each(function(){    
+ //color-code the timeblocks 
+$(".time-block").each(function(){    
     // time of event 
     var blockTime = parseInt($(this).attr("id").split("hour-")[1]);
-    
+        
     //add 12hrs to block time if block times are between 1-5pm.
     if(blockTime<6) {
         blockTime+=12;
     }
-        // check if the eventtime is greater than current time 
-        // the event time is about to happen in future 
-        if (blockTime>timeNow)
+    // check if the eventtime is greater than current time 
+    // the event time is about to happen in future 
+    if (blockTime>timeNow)
         {
             $(this).removeClass("past");
             $(this).removeClass("present");
@@ -39,8 +41,9 @@ var Timetracker = function(){
             $(this).removeClass("future");
              //change backround to gray
             $(this).addClass("past");
-            //disable the text area you cannot edit as the time passed already
+            //disable the text area and button you cannot edit as the time passed already
             $(this).find("textarea").attr("disabled",true);
+            $(this).find("button").attr("disabled",true);
            
         }
         // Check if the event time is in the urrent time window
@@ -53,25 +56,27 @@ var Timetracker = function(){
     });
     return;
 }
+
 //Save button eventlistener 
 $(".saveBtn").on("click", function () {
     // Get values of the description in JQuery
     var text = $(this).siblings(".description").val().trim();
     var time = $(this).parent().attr("id");
 
-    // Save text in local storage
+    // Save event in local storage
     localStorage.setItem(time, text);
 });
 
 // load the saved  schedule 
 var loadCalendar = function(){
-var timeStamp =localStorage.getItem("time");
+var lastaccessedtimeStamp =localStorage.getItem("lastaccessedtime");
 
 // Check if  its not the current day 
-if((moment().format('MM/DD/YY') )!= timeStamp){
-    console.log ("If passes ");
-    //Clear data to keep planner ready for next day 
-    clearData();
+if(thisDate!= lastaccessedtimeStamp){
+    
+    //Clear events  to keep planner ready for next day 
+    clearEvents();
+    
 }
 $("#hour-8 .description").val(localStorage.getItem("hour-8"));
 $("#hour-9 .description").val(localStorage.getItem("hour-9"));
@@ -87,11 +92,10 @@ return;
 };
 
 // Clear storage for the next day 
-var clearData =function(){
-      // in 13 hours
-    console.log("ready to cleanup");
+var clearEvents =function(){
+
     // clean up local storage 
-    localStorage.clear();    
+    localStorage.clear();          
     return;
 }
 
@@ -99,5 +103,6 @@ var clearData =function(){
 loadCalendar();
 // Track the status of each event item in the planner 
 Timetracker();
-  
-
+//save the last accessed time , in local storage  . 
+// This is used for comparing and making sure that the local storage is cleared when  the user accesses the next day .
+localStorage.setItem("lastaccessedtime",thisDate);
