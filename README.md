@@ -18,7 +18,7 @@ The following have been incorporated in this project :
 * Each time block is color-coded to indicate whether it is in the past(gray), present(red), or future(green). 
   This is incorporated by comparing the current time (moment()),with the id of each time block. Color codes on set based on if the    current time is past, 
   or is the same or if its less than the time in the time block.
-* The text boxes of the time blocks whose times have already past current time are disabled, as you cannot plan for the time that has already passed.
+* The text boxes and buttons of the time blocks whose times have already past current time are disabled, as you cannot plan for the time that has already passed.
 * When the user clicks into a time block(that's  color-coded red /green, he can enter an event.
 * When the user clicks the save button for that time block the text for that event is saved in local storage for persistance,
  using web-APIs. 
