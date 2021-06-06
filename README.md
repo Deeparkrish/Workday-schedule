@@ -11,17 +11,18 @@ The following have been incorporated in this project :
   to display the date and time.
 * As the user scrolls down he is presented with time blocks for standard business hours, which is 8am -5pm. 
   This display has been incorportated in HTML by using bootstrap grid system powered by css.
-* Eahc time -block, has the following : 1. The time that it represents on the left  2. A text area to enter and save an event 
+* Each time -block, has the following : 1. The time that it represents on the left  2. A text area to enter and save an event 
   3. A save button to the right of text-area, which has a save-icon from fonatawesome style-sheet provided in starter code.
 * Each time-block is associated with an id, the breifly depics the time range that it shows. 
   Example: id =hour-10, is the id for the timeblock between 10-11.
 * Each time block is color-coded to indicate whether it is in the past(gray), present(red), or future(green). 
-  This is incorporated by comparing the current time (moment()),with the id of each time block. Color codes on set based on if the    current time is past, 
-  or is the same or if its less than the time in the time block.
-* The text boxes and buttons of the time blocks whose times have already past current time are disabled, as you cannot plan for the time that has already passed.
+  This is incorporated by comparing the current time (moment()),with the id of each time block. Color codes on set based on if the current time is 
+  past, or is the same or if its less than the time in the time block.
+* The text boxes and buttons of the time blocks whose times have already past current time are disabled, as you cannot plan for the time that has 
+  already passed.
 * When the user clicks into a time block(that's  color-coded red /green, he can enter an event.
 * When the user clicks the save button for that time block the text for that event is saved in local storage for persistance,
- using web-APIs. 
+  using web-APIs. 
 * At the local storage, the id of each time block is saved as key, and the event the user entered is stored as value.
 * When the page  is refreshed the the saved events persist.The events are displayed using localstorage.getItem()API.
 * When the user reloads the planner the next day, the local storage is cleared(previous day events) and he is all set to enter the events for that day.
